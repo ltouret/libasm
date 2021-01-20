@@ -6,7 +6,7 @@
 /*   By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:33:54 by ltouret           #+#    #+#             */
-/*   Updated: 2021/01/19 00:05:49 by ltouret          ###   ########.fr       */
+/*   Updated: 2021/01/20 23:28:53 by ltouret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*ft_strcpy(char *dest, char *src);
 int		ft_strcmp(char *s1 , char *s2);
 ssize_t	ft_write(int fd, const void *buf, size_t count); 
 ssize_t	ft_read(int fd, void *buf, size_t count);
+char	*ft_strdup(const char *s);
 
 int		main()
 {
@@ -107,4 +108,12 @@ int		main()
 	ret_ft_read = ft_read(fd, dest, 18);
 	close(fd);
 	printf("ft_read : %s, ret : %d, errno : %d\n", dest, ret_ft_read, errno);
+
+	printf("\n-- ft_strdup --\n");
+	errno = 0;
+	char *duplicated_str = ft_strdup("hello world");
+	if (duplicated_str)
+		printf("%p : %s, errno : %d\n", duplicated_str, duplicated_str, errno);
+	else
+		printf("%p, errno : %d\n", duplicated_str, errno);
 }
