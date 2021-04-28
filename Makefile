@@ -6,7 +6,7 @@
 #    By: ltouret <ltouret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/04 16:31:04 by ltouret           #+#    #+#              #
-#    Updated: 2021/01/19 00:04:48 by ltouret          ###   ########.fr        #
+#    Updated: 2021/04/28 19:18:12 by ltouret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,6 @@ fclean:	clean
 re:		fclean all
 
 test: fclean all
-	${CC} ${CFLAGS} main.c ${NAME} 
+	${CC} ${CFLAGS} main.c ${NAME} -o test
 
 .PHONY : all clean fclean re test
